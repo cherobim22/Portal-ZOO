@@ -1,7 +1,7 @@
 <?php 
     session_start();
 
-    require_once('src/utils/ConnectionFactory.php');
+    require_once('../src/utils/ConnectionFactory.php');
 
     $con = ConnectionFactory::getConnection();
 
@@ -19,7 +19,7 @@
             $_SESSION['user'] = $usuario;
             $_SESSION['logado']['message'] = "Logado com sucesso";
             $_SESSION['admin'] = $user->portal_admin;
-            header("Location: index.php");
+            header("Location: ../index.php");
         } else {
             $_SESSION['flash']['error'] = "Dados Incorretos, tente novamente (senha)";
             header("Location: login.php");

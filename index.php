@@ -3,7 +3,7 @@
 
   if(! $_SESSION['logado']) {
       $_SESSION['flash']['error'] = "Você precisa estar logado para executar essa ação.";
-      header("Location: sign_in.php");
+      header("Location: login/login.php");
       exit(0);
   }
 

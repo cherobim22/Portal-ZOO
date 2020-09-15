@@ -26,7 +26,7 @@
                 </ul>
             </div>
 
-            <span><?= $_SESSION['user'] ?></span><a class="nav-link" href="/sign_out.php">Sair</a>
+            <span><?= $_SESSION['user'] ?></span><a class="nav-link" href="../login/sign_out.php">Sair</a>
             
         </div>
                      

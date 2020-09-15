@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <?php include("partials/__head.php") ?>
+    <?php include("../partials/__head.php") ?>
     <link rel="stylesheet" href="login.css" class="">
     <title>LOGIN </title>
 </head>
@@ -35,7 +35,7 @@
                 </div>
             
                 <div class="col-md-6 img-amz">
-                    <img src="images/amazonas.jpg" alt="" id="img_amazonas" width="100%" height="100%">
+                    <img src="../images/amazonas.jpg" alt="" id="img_amazonas" width="100%" height="100%">
                 </div>
                 
                 
@@ -73,6 +73,6 @@
             </div>
         </div>
 
-    <?php include("partials/__js_imports.php") ?>
+    <?php include("../partials/__js_imports.php") ?>
 </body>
 </html>

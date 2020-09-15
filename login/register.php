@@ -1,5 +1,5 @@
 <?php
-    require_once('src/utils/ConnectionFactory.php');
+    require_once('../src/utils/ConnectionFactory.php');
     $con = ConnectionFactory::getConnection();
 
     $user = $_REQUEST['user'];
