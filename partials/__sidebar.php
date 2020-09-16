@@ -1,10 +1,16 @@
+<?php
+require_once('../src/dao/CategoriaDAO.php');
 
-<aside class="col-md-3" style="border: 1px solid #ccc; border-radius:5px; height:50%;">
+
+$cat_stmt = CategoriaDAO::getAll();
+?>
+<aside class="col-md-3" >
                     <h2>Categorias</h2>
                     <ul>
-                        <li><a href="#">Mamíferos</a></li>
-                        <li><a href="#">Répteis</a></li>
-                        <li><a href="#">Peixes</a></li>
-                        <li><a href="#">Aves</a></li>
+                    <?php while($row = $cat_stmt->fetch(PDO::FETCH_OBJ)) : ?>
+                                    <li value="<?= $row->id_categoria ?>"><a href="#"><?= $row->nome ?></a></li>
+                    <?php endwhile?>
                     </ul>
 </aside>
+
+

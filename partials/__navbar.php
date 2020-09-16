@@ -6,6 +6,9 @@
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                        <a class="nav-link" href="/app">Home<span class="sr-only"></span></a>
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/animais">Animais<span class="sr-only"></span></a>
                     </li>
@@ -28,6 +31,5 @@
 
             <span><?= $_SESSION['user'] ?></span><a class="nav-link" href="../login/sign_out.php">Sair</a>
             
-        </div>
-                     
+        </div>           
     </nav>
