@@ -1,8 +1,8 @@
 <?php
-require_once('../src/dao/CategoriaDAO.php');
+require_once('../src/dao/AnimaisDAO.php');
 
 $id = $_GET['id'];
 
-$stmt = CategoriaDAO::delete($id);
+$stmt = AnimaisDAO::delete($id);
 
-header(("Location: categorias"));
+header(("Location: animais"));
