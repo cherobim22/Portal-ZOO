@@ -1,9 +1,12 @@
 <?php
+require_once('../src/dao/AnimaisDAO.php');
+$stmt = AnimaisDAO::getALL();
+
   session_start();
 
   if(! $_SESSION['logado']) {
       $_SESSION['flash']['error'] = "Você precisa estar logado para executar essa ação.";
-      header("Location: login/login.php");
+      header("Location: ../login/login.php");
       exit(0);
   }
 
