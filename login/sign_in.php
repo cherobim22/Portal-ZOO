@@ -19,7 +19,7 @@
             $_SESSION['user'] = $usuario;
             $_SESSION['logado']['message'] = "Logado com sucesso";
             $_SESSION['admin'] = $user->portal_admin;
-            header("Location: ../index.php");
+            header("Location: ../app/index.php");
         } else {
             $_SESSION['flash']['error'] = "Dados Incorretos, tente novamente (senha)";
             header("Location: login.php");
