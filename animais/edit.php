@@ -49,7 +49,14 @@ $id = $_GET['id'];
                             <div class="col-sm-10">
                                  <input type="text" class="form-control" id="nome" name="nome" value="<?= $animais->nome ?>"/>
                             </div>
-                        </div>    
+                        </div>  
+
+                         <div class="form-group row">
+                            <label for="imagem" class="col-sm-2 col-form-label">Imagem</label>
+                            <div class="col-sm-10">
+                                 <input type="text" class="form-control" id="imagem" name="imagem" value="<?= $animais->img_animal ?>"/>
+                            </div>
+                        </div>  
 
                         <div class="form-group row">
                             <label for="alimentacao" class="col-sm-2 col-form-label">Alimentação</label>
