@@ -1,4 +1,5 @@
 <?php
+    require_once('../src/utils/FlashMessages.php');
     require_once('../src/utils/ConnectionFactory.php');
     $con = ConnectionFactory::getConnection();
 
@@ -13,7 +14,9 @@
     $stmt->bindParam(':senha', $hashed_password);
     $stmt->bindParam(':portal_admin', $admin);
     $stmt->execute();
-
+   
+        FlashMessages::setMessages("Login realizado com sucesso", "success");
+    
     header("location: login.php");
 
 ?>

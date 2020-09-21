@@ -1,6 +1,6 @@
 <?php 
     session_start();
-
+    require_once('../src/utils/FlashMessages.php');
     require_once('../src/utils/ConnectionFactory.php');
 
     $con = ConnectionFactory::getConnection();
@@ -21,12 +21,12 @@
             $_SESSION['admin'] = $user->portal_admin;
             header("Location: ../app/index.php");
         } else {
-            $_SESSION['flash']['error'] = "Dados Incorretos, tente novamente (senha)";
+            FlashMessages::setMessages("Senha Incorreta, Tente Novamente!", "error");
             header("Location: login.php");
         }
 
     } else {
-        $_SESSION['flash']['error'] = "Dados Incorretos, tente novamente (email)";
+        FlashMessages::setMessages("Usuario Incorreto, Tente Novamente!", "error");
         header("Location: login.php");
     }
 ?>

@@ -1,6 +1,11 @@
 <?php
 
+require_once('../src/utils/FlashMessages.php');
 
+
+    $error = FlashMessages::getMessages("error");
+    $success = FlashMessages::getMessages("success");
+   
 ?>
 
 <!DOCTYPE html>
@@ -11,12 +16,17 @@
     <title>LOGIN </title>
 </head>
 <body>
-    
+<?php if(isset($error)) : ?>
+                <p class="alert alert-danger"><?= $error?></p>
+            <?php endif ?>
+            <?php if(isset($success)) : ?>
+                <p class="alert alert-success"><?= $success?></p>
+            <?php endif ?>
         <div class="container login-container">
             <div class="row">
                
                 <div class="col-md-6 login-form-1">
-                    <h3>Portal ZOO</h3>
+                    <h3>Bem vindo ao Portal ZOO</h3>
                     <form action="sign_in.php" method="POST">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Digite seu usuario" value="" name="log[usuario]"/>
@@ -53,7 +63,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/register.php" method="POST">
+                    <form action="register.php" method="POST">
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Usuário: </label>
                         <input type="text" class="form-control" id="email" name="user[usuario]">
