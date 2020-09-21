@@ -2,7 +2,7 @@ section#content{
     margin-top: 30px;
 }
 
-section#content .produto{
+section#content .animais{
     margin-bottom: 30px;
 }
 
@@ -10,16 +10,16 @@ section#content h2 {
     margin-bottom: 30px;
 }
 
-section#content .produto p{
+section#content .animais p{
     text-align: justify;
     margin-top:20px;
 }
 
-section#content .produto img {
+section#content .animais img {
     width: 100%;;
 }
 
-section#content .produto .bordered{
+section#content .animais .bordered{
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 15px;
@@ -34,7 +34,5 @@ section#content .produto .bordered{
 .info{
     margin-left: 9.5%;
     display: flex;
-   
-   
 }
 
