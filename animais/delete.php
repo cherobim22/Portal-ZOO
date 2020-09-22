@@ -5,4 +5,4 @@ $id = $_GET['id'];
 
 $stmt = AnimaisDAO::delete($id);
 
-header(("Location: animais"));
+header(("Location: ../animais"));
