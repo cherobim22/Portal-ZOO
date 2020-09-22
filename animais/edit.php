@@ -2,23 +2,28 @@
 
 require_once('../src/dao/AnimaisDAO.php');
 require_once('../src/dao/CategoriaDAO.php');
+require_once('../src/utils/FlashMessages.php');
 
-session_start();
 
 if(! $_SESSION['logado']) {
-    $_SESSION['flash']['error'] = "Você precisa estar logado para executar essa ação.";
-    header("Location: login/login.php");
+    FlashMessages::setMessages("Voce precisa estar logado", "error");
+    header("Location: ../login/login.php");
     exit(0);
 }
 
-$id = $_GET['id'];
+        $id = $_GET['id'];
 
         // $con = ConnectionFactory::getConnection();
 
         // $stmt = $con->prepare("SELECT * FROM animais WHERE id = :id");
         // $stmt->bindParam(":id", $id);
         // $stmt->execute();
-        $stmt = AnimaisDAO::getAll();
+        // $con = ConnectionFactory::getConnection();
+
+        // $stmt = $con->prepare("SELECT * FROM animaisdd WHERE id = :id");
+        // $stmt->bindParam(":id", $id);
+        // $stmt->execute();
+        $stmt = AnimaisDAO::getById($id);
         $cat_stmt = CategoriaDAO::getAll();
 
         $animais = $stmt->fetch(PDO::FETCH_OBJ);
@@ -54,7 +59,7 @@ $id = $_GET['id'];
                          <div class="form-group row">
                             <label for="imagem" class="col-sm-2 col-form-label">Imagem</label>
                             <div class="col-sm-10">
-                                 <input type="text" class="form-control" id="imagem" name="imagem" value="<?= $animais->img_animal ?>"/>
+                                 <input type="text" class="form-control" id="imagem" name="imagem" disabled value="<?= $animais->img_animal ?>"/>
                             </div>
                         </div>  
 
@@ -76,7 +81,7 @@ $id = $_GET['id'];
                             <div class="col-sm-10">
                                
                                 <select class="form-control" id="categoria_id" name="categoria_id" >
-                                <option value="<?=$animais->categoria_id ?>"><?= $animais->categoria_nome ?></option>
+                                <option value="<?=$animais->categoria_id ?>"><?= $animais->categoria_id ?></option>
                                 <option></option>
                                  <?php while($row = $cat_stmt->fetch(PDO::FETCH_OBJ)) : ?>
                                     <option value="<?= $row->id_categoria ?>"><?= $row->nome ?></option>
@@ -93,8 +98,9 @@ $id = $_GET['id'];
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary mb-2 float-right">Submit</button>
+                        <button style="margin-top: 5px;" type="submit" class="btn btn-primary mb-2 float-right">Salvar</button>
                     </form>
+                    <a  type="submit" href="../animais" class="btn btn-danger mb-2 float-right">Cancelar</a>
                 </div>
             </div>
         </div>
