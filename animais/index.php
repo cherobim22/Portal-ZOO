@@ -1,12 +1,11 @@
 <?php
 require_once('../src/dao/AnimaisDAO.php');
+require_once('../src/utils/FlashMessages.php');
 
-
-session_start();
 
 if(! $_SESSION['logado']) {
-    $_SESSION['flash']['error'] = "Você precisa estar logado para executar essa ação.";
-    header("Location: login/login.php");
+    FlashMessages::setMessages("Voce precisa estar logado", "error");
+     header("Location: ../login/login.php");
     exit(0);
 }
 
@@ -44,23 +43,25 @@ $stmt = AnimaisDAO::getAll();
                         <tr>
                             <th>ID</th>
                             <th>NOME</th>
-                            <th>ESPECIE</th>
+                            <th>IMAGEM</th>
+                            <th>ESPÉCIE</th>
                             <th>PESO</th>
                             <th>ALIMENTAÇÃO</th>
-                            <th>LOGEVIDADE</th>
+                            <th>LONGEVIDADE</th>
                             <th>AÇÕES</th>
                        
                             <?php while($row = $stmt->fetch(PDO::FETCH_OBJ)) : ?>
                                </tr> 
                                     <td><?= $row->id ?></td>
                                     <td><?= $row->nome ?></td>
+                                    <td><?= $row->img_animal ?></td>
                                     <td><?= $row->categoria_nome ?></td>
                                     <td><?= $row->peso ?> Kg</td>
                                     <td><?= $row->alimentacao ?></td>
                                     <td><?= $row->longevidade ?> Anos</td>
                                     <td>
                                         <a href="../animais/edit.php?id=<?= $row->id ?>" class="btn btn-sm btn-warning">Editar</a>
-                                        <a href="../animais/delete.php?id=<?= $row->id ?>" class="btn btn-sm btn-danger" onclick="return confirm('Você realmente quer excluir esta categoria: <?= $row->nome ?>')">Excluir</a>
+                                        <a href="../animais/delete.php?id=<?= $row->id ?>" class="btn btn-sm btn-danger" onclick="return confirm('Você realmente quer excluir este Animal: <?= $row->nome ?>')">Excluir</a>
 
                                     </td>
                                 <tr>

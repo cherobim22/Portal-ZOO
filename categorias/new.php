@@ -1,3 +1,14 @@
+<?php
+require_once('../src/utils/FlashMessages.php');
+
+
+
+if(! $_SESSION['logado']) {
+    FlashMessages::setMessages("Voce precisa estar logado", "error");
+    header("Location: ../login/login.php");
+    exit(0);
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -22,8 +33,9 @@
                                  <input type="text" class="form-control" id="nome" name="nome"/>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary mb-2 float-right">Submit</button>
+                        <button style="margin-top: 2px;" type="submit" class="btn btn-primary mb-2 float-right">Salvar</button>
                     </form>
+                    <a  type="submit" href="../categorias" class="btn btn-danger mb-2 float-right">Cancelar</a>
                 </div>
             </div>
         </div>
