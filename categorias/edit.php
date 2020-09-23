@@ -1,13 +1,16 @@
 <?php
 require_once('../src/utils/ConnectionFactory.php');
+require_once('../src/utils/FlashMessages.php');
 
-session_start();
+
 
 if(! $_SESSION['logado']) {
-    $_SESSION['flash']['error'] = "Você precisa estar logado para executar essa ação.";
-    header("Location: login/login.php");
+    FlashMessages::setMessages("Voce precisa estar logado", "error");
+    header("Location: ../login/login.php");
     exit(0);
 }
+
+
 
 $id = $_GET['id'];
 
@@ -41,13 +44,14 @@ $categoria = $stmt->fetch(PDO::FETCH_OBJ);
                     <form action="update.php" method="POST">
                     <input type="hidden" name="id" value="<?= $categoria->id_categoria ?>"/>
                         <div class="form-group row">
-                            <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+                            <label for="nome" class="col-sm-2 col-form-label" required>Nome</label>
                             <div class="col-sm-10">
                                  <input type="text" class="form-control" id="nome" name="nome" value="<?= $categoria->nome?>"/>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-success mb-2 float-right">Atualizar</button>
+                        <button style="margin-top: 5px;" type="submit" class="btn btn-primary mb-2 float-right">Salvar</button>
                     </form>
+                    <a  type="submit" href="../categorias" class="btn btn-danger mb-2 float-right">Cancelar</a>
                 </div>
             </div>
         </div>

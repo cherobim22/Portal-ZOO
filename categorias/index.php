@@ -1,11 +1,12 @@
 <?php
 require_once('../src/dao/CategoriaDAO.php');
+require_once('../src/utils/FlashMessages.php');
 
-session_start();
+
 
 if(! $_SESSION['logado']) {
-    $_SESSION['flash']['error'] = "Você precisa estar logado para executar essa ação.";
-    header("Location: login/login.php");
+    FlashMessages::setMessages("Voce precisa estar logado", "error");
+    header("Location: ../login/login.php");
     exit(0);
 }
 
@@ -35,14 +36,14 @@ $stmt = CategoriaDAO::getAll();
             <div class="row">
                 <!-- sempre somar 12 -->
                 <?php include("../partials/__sidebar.php") ?>
-                <div class="col-md-6 categorias">
+                <div class="col-md-9 categorias">
                     <h2>Cadastro de Categorias <a href="../categorias/new.php" class="btn btn-success float-right">Nova Categoria</a></h2>
 
                     <table class="table">
                         <tr>
-                            <th>ID |</th>
-                            <th>NOME |</th>
-                            <th>AÇÕES |</th>
+                            <th>ID</th>
+                            <th>NOME</th>
+                            <th>AÇÕES</th>
                        
                             <?php while($row = $stmt->fetch(PDO::FETCH_OBJ)) : ?>
                                </tr> 
