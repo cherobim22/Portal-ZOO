@@ -41,6 +41,7 @@ require_once('../src/utils/FlashMessages.php');
                     <div class="row">
                     
                         <?php while($row = $stmt->fetch(PDO::FETCH_OBJ)) : ?>
+                            
                         <div class="col-sm-4 animais">
                             <div class="bordered">
                                 <h3><?= $row->nome ?></h3>
@@ -52,7 +53,7 @@ require_once('../src/utils/FlashMessages.php');
                                 <?php }  ?>
 
                                <ul>
-                                   <li><b>Categoria: </b><?= $row->categoria_nome ?></li>
+                                   <li><b>Categoria: </b><?= $row->categoria_nome_ab ?></li>
                                    <li><b>Alimentação: </b><?= $row->alimentacao ?></li>
                                    <li><b>Longevidade: </b><?= $row->longevidade ?> Anos</li>
                                    <li><b>Peso: </b><?= $row->peso ?> Kg</li>
