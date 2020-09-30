@@ -8,5 +8,4 @@ $stmt = CategoriaDAO::create($nome);
 
 header(("Location: categorias"))
 
-
 ?>
