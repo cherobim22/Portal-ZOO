@@ -22,10 +22,7 @@ $stmt = CategoriaDAO::getAll();
     <title>Portal ZOO - Cadastro de Categorias </title>
 </head>
 <style>
-/* .categorias{
-    padding: 2px;
-    border: 1px solid #ccc;
-} */
+
 
 </style>
 <body>
@@ -56,15 +53,12 @@ $stmt = CategoriaDAO::getAll();
                                     </td>
                                 <tr>
                             <?php endwhile?>
-                        
-                           
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
     </section>
-
     <?php include("../partials/__js_imports.php") ?>
 </body>
 </html>

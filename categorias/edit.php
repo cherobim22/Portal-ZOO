@@ -3,13 +3,11 @@ require_once('../src/utils/ConnectionFactory.php');
 require_once('../src/utils/FlashMessages.php');
 
 
-
 if(! $_SESSION['logado']) {
     FlashMessages::setMessages("Voce precisa estar logado", "error");
     header("Location: ../login/login.php");
     exit(0);
 }
-
 
 
 $id = $_GET['id'];
