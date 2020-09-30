@@ -12,13 +12,8 @@ if(! $_SESSION['logado']) {
     exit(0);
 }
 
-$id = $_GET['id'];
+        $id = $_GET['id'];
 
-        // $con = ConnectionFactory::getConnection();
-
-        // $stmt = $con->prepare("SELECT * FROM animais WHERE id = :id");
-        // $stmt->bindParam(":id", $id);
-        // $stmt->execute();
         $stmt = AnimaisDAO::getAll();
         $cat_stmt = CategoriaDAO::getAll();
 
@@ -44,7 +39,6 @@ $id = $_GET['id'];
     <section id="content">
         <div class="container">
             <div class="row">
-                <!-- sempre somar 12 -->
                 <?php include("../partials/__sidebar.php") ?>
                 <div class="col-md-9">
                     <h2><?= $animais->nome ?> </h2>

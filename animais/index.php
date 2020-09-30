@@ -11,10 +11,7 @@ if(! $_SESSION['logado']) {
 
 $stmt = AnimaisDAO::getAll();
 
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -22,10 +19,6 @@ $stmt = AnimaisDAO::getAll();
     <title>Portal ZOO - Cadastro de Animais </title>
 </head>
 <style>
-/* .categorias{
-    padding: 2px;
-    border: 1px solid #ccc;
-} */
 
 </style>
 <body>
