@@ -12,17 +12,6 @@ if(! $_SESSION['logado']) {
 }
 
         $id = $_GET['id'];
-
-        // $con = ConnectionFactory::getConnection();
-
-        // $stmt = $con->prepare("SELECT * FROM animais WHERE id = :id");
-        // $stmt->bindParam(":id", $id);
-        // $stmt->execute();
-        // $con = ConnectionFactory::getConnection();
-
-        // $stmt = $con->prepare("SELECT * FROM animaisdd WHERE id = :id");
-        // $stmt->bindParam(":id", $id);
-        // $stmt->execute();
         $stmt = AnimaisDAO::getById($id);
         $cat_stmt = CategoriaDAO::getAll();
 

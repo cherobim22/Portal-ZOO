@@ -41,10 +41,6 @@ if(isset($_FILES['imagem']['name'])){
     $return = move_uploaded_file($_FILES['imagem']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . $novo_nome);
 }
 
-
-
-
-
 $con = ConnectionFactory::getConnection();
 $stmt = $con->prepare("INSERT INTO animaisdd (img_animal, nome, categoria_id, peso, alimentacao, longevidade) 
                                         VALUES ( :imagem, :nome, :categoria_id, :peso, :alimentacao, :longevidade)");
