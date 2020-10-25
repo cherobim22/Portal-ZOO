@@ -11,7 +11,7 @@ require_once('../src/utils/FlashMessages.php');
     }
 
     if(! $_SESSION['logado']) {
-        FlashMessages::setMessages("Voce precisa estar logado", "error");
+        FlashMessages::setMessages("Você precisa estar logado", "error");
          header("Location: ../login/login.php");
         exit(0);
     }
