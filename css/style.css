@@ -36,3 +36,10 @@ section#content .animais .bordered{
     display: flex;
 }
 
+
+.nav-link:hover{
+    background-color: #17a2b8;
+    border-radius: 10px;
+    color: white;
+  
+}
