@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                        <a class="nav-link" href="/app">Home<span class="sr-only"></span></a>
+                        <a class="nav-link " href="/app">Home<span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/animais">Animais<span class="sr-only"></span></a>
@@ -21,7 +21,7 @@
                 </ul>
             </div>
 
-            <span><?= $_SESSION['user'] ?></span><a class="nav-link" href="../login/sign_out.php">Sair</a>
+            <span style="margin-right: 5px"><?= $_SESSION['user'] ?></span><a class="nav-link" href="../login/sign_out.php">Sair</a>
            
         </div>           
     </nav>
