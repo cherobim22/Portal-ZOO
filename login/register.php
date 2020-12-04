@@ -15,7 +15,7 @@
     $stmt->bindParam(':portal_admin', $admin);
     $stmt->execute();
    
-        FlashMessages::setMessages("Login realizado com sucesso", "success");
+        FlashMessages::setMessages("Cadastrado com sucesso", "success");
     
     header("location: login.php");
 
