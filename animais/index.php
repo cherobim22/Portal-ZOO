@@ -47,7 +47,7 @@ $stmt = AnimaisDAO::getAll();
                                </tr> 
                                     <td><?= $row->id ?></td>
                                     <td><?= $row->nome ?></td>
-                                    <td><?= $row->img_animal ?></td>
+                                    <td><img width="60" height="40" src="<?= $row->img_animal ?>"></td>
                                     <td><?= $row->categoria_nome_ab ?></td>
                                     <td><?= $row->peso ?> Kg</td>
                                     <td><?= $row->alimentacao ?></td>
