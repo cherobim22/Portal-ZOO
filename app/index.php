@@ -71,5 +71,10 @@ require_once('../src/utils/FlashMessages.php');
     <?php include("../partials/__js_imports.php") ?>
     
 </body>
+<script>
+//ideias
+// colocar um modal pra quando clicar no animal, e ai aparecer todas as identificações
+//
+</script>
 </html>
 
